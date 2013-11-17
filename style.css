@@ -1,0 +1,16 @@
+﻿body
+{
+    padding: 0px;
+    margin: 0px;
+    background-color:lightgrey;
+    font-family:Trebuchet MS;
+}
+
+div.profile
+{
+    margin:20px auto;
+    background-color:white;
+    width:90%;
+    height:800px;
+    border-radius:10px;
+}
