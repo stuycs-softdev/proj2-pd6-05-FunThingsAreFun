@@ -1,7 +1,5 @@
-proj2-pd6-05-FakeProfileGenerator
+FakeProfileGenerator
 ============================
-
-Because fun things are fun.
 
 #Team Members
 * Jasper Lu- Frontend
@@ -23,3 +21,5 @@ Because fun things are fun.
 * Random User API
 * About.me API
 * Personality Forge Chat Bot API
+
+##Timeline:
