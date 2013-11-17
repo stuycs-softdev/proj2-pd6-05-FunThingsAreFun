@@ -11,6 +11,30 @@ div.profile
     margin:20px auto;
     background-color:white;
     width:90%;
+    min-width:800px;
     height:800px;
+    border-radius:5px;
+}
+
+div.profile > img
+{
+    float:left;
     border-radius:10px;
+    width:30%;
+    margin:1em 0 0 1em;
+}
+
+div.profile > div
+{
+    float:left;
+    width:62.5%;
+    height:auto;
+    border:1px solid;
+    margin:1em 0 0 2.5%;
+}
+
+div.profile > div > h1 
+{
+    margin:0;
+    font-size:20vm;
 }
