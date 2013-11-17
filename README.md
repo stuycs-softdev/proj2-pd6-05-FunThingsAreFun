@@ -1,4 +1,4 @@
-proj2-pd6-05-FunThingsAreFun
+proj2-pd6-05-FakeProfileGenerator
 ============================
 
 Because fun things are fun.
