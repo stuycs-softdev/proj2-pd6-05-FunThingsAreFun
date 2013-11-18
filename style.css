@@ -1,0 +1,60 @@
+﻿body
+{
+    padding: 0px;
+    margin: 0px;
+    background-color:lightgrey;
+    font-family:Trebuchet MS;
+}
+
+div.profile
+{
+    margin:0px auto;
+    margin-top:20px;
+    background-color:white;
+    width:90%;
+    min-width:600px;
+    max-width:1100px;
+    height:auto;
+    border-radius:5px;
+    overflow:auto;
+}
+
+div.profile > img
+{
+    float:left;
+    border-radius:10px;
+    width:25%;
+    margin:2.5% 0 0 2.5%;
+}
+
+div.profile > div
+{
+    float:left;
+    width:64.5%;
+    height:auto;
+    margin:2.5% 0 0 2.5%;
+    padding:1.5%;
+    border-radius:10px;
+}
+
+div.profile > div > h1, div.profile > div > h2
+{
+    margin:0;
+}
+
+div.profile > div > table
+{
+    width:100%;
+}
+
+td
+{
+    padding-right:2%;
+}
+
+div.profile > div.aboutme
+{
+    width:92%;
+    height:auto;
+    margin-bottom:2.5%;
+}

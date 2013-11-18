@@ -1,0 +1,35 @@
+﻿<html>
+<head>
+    <title>Fake Profiles</title>
+    <link type="text/css" rel="stylesheet" href="style.css" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script src="jquery.fittext.js"></script>
+        </head>
+        <body>
+            <div class="profile" >
+                <img src="test_pic.jpg" />
+                <!--color will be the dude's favorite color'-->
+                <div style="background-color: #d8d1d1; ">
+                    <h1 class="fittext1">Alen Mai</h1>
+                    <table class="fittext2">
+                        <tr><td>age</td><td>17</td></tr>
+                        <tr><td>job</td><td>professional league of legends player here</td></tr>
+                        <tr><td>email</td><td>thealenmdfs@gmail.com</tr>
+                        <tr><td>hobbies</td><td>Programming, writing, playing piano, other stuff...</td></tr>
+                    </table>
+                </div>
+                <!--the guy chooses the second color too-->
+                <div class="aboutme" style="background-color: #FF6B6B">
+                    <h1>About Me</h1>
+                    <p class="fittext3">HELLOOOO THIS IS THE ABOUT ME SECTION TEXT</p>
+                </div>
+            </div>
+            <script type="text/javascript">
+                $(".fittext1").fitText();
+                $(".fittext2").fitText(2.5);
+                $(".fittext3").fitText(3);
+            </script>
+        </body>
+
+
+</html>
