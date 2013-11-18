@@ -8,33 +8,51 @@
 
 div.profile
 {
-    margin:20px auto;
+    margin:0px auto;
+    margin-top:20px;
     background-color:white;
     width:90%;
     min-width:800px;
-    height:800px;
+    height:auto;
     border-radius:5px;
+    overflow:auto;
 }
 
 div.profile > img
 {
     float:left;
     border-radius:10px;
-    width:30%;
-    margin:1em 0 0 1em;
+    width:25%;
+    margin:2.5% 0 0 2.5%;
 }
 
 div.profile > div
 {
     float:left;
-    width:62.5%;
+    width:64.5%;
     height:auto;
-    border:1px solid;
-    margin:1em 0 0 2.5%;
+    margin:2.5% 0 0 2.5%;
+    padding:1.5%;
+    border-radius:10px;
 }
 
-div.profile > div > h1 
+div.profile > div > h1, div.profile > div > h2
 {
     margin:0;
-    font-size:20vm;
+}
+
+div.profile > div > table
+{
+    width:100%;
+}
+
+td
+{
+    padding-right:2%;
+}
+
+div.profile > div.aboutme
+{
+    width:92%;
+    height:auto;
 }
