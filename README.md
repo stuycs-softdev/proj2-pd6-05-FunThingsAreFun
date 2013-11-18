@@ -1,13 +1,12 @@
-proj2-pd6-05-FunThingsAreFun
+FakeProfileGenerator
 ============================
 
-Because fun things are fun.
-
 #Team Members
-* Jasper Lu
-* Arfan Rehab
-* Jason Zhen
-* Stanley Zheng
+* Jasper Lu- Frontend
+* Arfan Rehab- Frontend
+* Jason Zhen- Backend
+* Stanley Zheng- Backend
+* Everyone- Middleend
 
 #Project Plan: Profile Generation
 ##Planned Features:
@@ -22,3 +21,5 @@ Because fun things are fun.
 * Random User API
 * About.me API
 * Personality Forge Chat Bot API
+
+##Timeline:
