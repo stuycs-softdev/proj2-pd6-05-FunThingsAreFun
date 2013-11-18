@@ -6,6 +6,21 @@
     font-family:Trebuchet MS;
 }
 
+div#generate
+{
+    margin:0 auto;
+    border-radius:5px;
+    height:50px;
+    width:200px;
+    background-color:#2ECC71;
+    border-bottom:4px solid #27AE60;
+    border-left:2px solid #27AE60;
+    text-align:center;
+    color:white;
+    line-height:50px;
+}
+
+
 div.profile
 {
     margin:0px auto;
