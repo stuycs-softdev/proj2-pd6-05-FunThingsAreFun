@@ -6,6 +6,9 @@
     <script src="jquery.fittext.js"></script>
         </head>
         <body>
+            <div id="generate">
+                <h2>GENERATE</h2>
+            </div>
             <div class="profile" >
                 <img src="test_pic.jpg" />
                 <!--color will be the dude's favorite color'-->
@@ -20,7 +23,7 @@
                 </div>
                 <!--the guy chooses the second color too-->
                 <div class="aboutme" style="background-color: #FF6B6B">
-                    <h1>About Me</h1>
+                    <h1 class="fittext4">About Me</h1>
                     <p class="fittext3">HELLOOOO THIS IS THE ABOUT ME SECTION TEXT</p>
                 </div>
             </div>
@@ -28,6 +31,7 @@
                 $(".fittext1").fitText();
                 $(".fittext2").fitText(2.5);
                 $(".fittext3").fitText(3);
+                $(".fittext4").fitText(2);
             </script>
         </body>
 
