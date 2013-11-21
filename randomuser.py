@@ -12,11 +12,15 @@ request = Request('http://api.randomuser.me/0.2')
 
 try:
 	response = urlopen(request)
-	read = response.read()
-	print read
-        results=read["results"][0]
+	results = response.read()
+	#print results
+        results=results.lstrip('{"results":')
+        results=results.rstrip("}")
         print results
-
+        
+        print results[results.rfind("gender"):results.rfind("gender")+len("gender")]
+        user={}
+        
 except URLError, e:
     print 'No response', e
 
