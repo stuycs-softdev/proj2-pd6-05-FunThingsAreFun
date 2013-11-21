@@ -28,7 +28,18 @@ try:
               "cell":"",
               "SSN":"",
               "picture":""}
-        list=["gender","name","location","email","password","md5_hash","sha1_hash","phone","cell","SSN","picture",'"seed"']
+        list=["gender",
+              "name",
+              "location",
+              "email",
+              "password",
+              "md5_hash",
+              "sha1_hash",
+              "phone",
+              "cell",
+              "SSN",
+              "picture",
+              '"seed"']
         
         #gender = results[results.rfind("gender")+len("gender"):results.rfind("name")]
         #gender=gender[3:-3]
