@@ -17,17 +17,29 @@ try:
         #results=results.lstrip('{"results":')
         #results=results.rstrip("}")
         #print results
-        
-        list=["gender","name","location","email","password","md5_hash","sha1_hash","phone","cell","SSN","picture",'"seed']
+        user={"gender":"",
+              "name":"",
+              "location":"",
+              "email":"",
+              "password":"",
+              "md5_hash":"",
+              "sha1_hash":"",
+              "phone":"",
+              "cell":"",
+              "SSN":"",
+              "picture":""}
+        list=["gender","name","location","email","password","md5_hash","sha1_hash","phone","cell","SSN","picture",'"seed"']
         
         #gender = results[results.rfind("gender")+len("gender"):results.rfind("name")]
         #gender=gender[3:-3]
         #print gender
         
         for x in range(0,len(list)-1):
-            print results[results.rfind(list[x])+len(list[x]):results.rfind(list[x+1])][3:-3]
-        user={}
+            #print results[results.rfind(list[x])+len(list[x]):results.rfind(list[x+1])][3:-3]
+            user[list[x]]=results[results.rfind(list[x])+len(list[x]):results.rfind(list[x+1])][3:-3]
+            print user[list[x]]
         
+        print user
 except URLError, e:
     print 'No response', e
 
