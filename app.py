@@ -1,6 +1,6 @@
 from flask import Flask, render_template
-#from py import *
-import randomuser.py
+from py import *
+import randomuser
 
 app = Flask(__name__)
 app.config.from_object('py.config')
@@ -10,6 +10,10 @@ env.line_statement_prefix = '='
 env.globals.update(utils=utils)
 
 @app.route("/")
+def index():
+	return render_template("index.html")
+
+@app.route("/profile")
 def profile():
 	user=getUser()
 	return render_template("template.profile.html",picture=user["picture"],name=user["name"],age=user["age"],email=user["email"])
