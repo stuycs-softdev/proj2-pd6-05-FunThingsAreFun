@@ -4,6 +4,18 @@ from py import *
 app = Flask(__name__)
 app.config.from_object('py.config')
 
+@app.route("/")
+def index();
+
+return render_template("index.html")
+
+
+
+
+
+
+
+
 env = app.jinja_env
 env.line_statement_prefix = '='
 env.globals.update(utils=utils)
