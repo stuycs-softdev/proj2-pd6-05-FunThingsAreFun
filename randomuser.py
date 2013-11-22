@@ -8,9 +8,10 @@ from urllib2 import Request, urlopen, URLError
 #  }
 #});
 
-request = Request('http://api.randomuser.me/0.2')
-
-try:
+def getUser():
+    request = Request('http://api.randomuser.me/0.2')
+    
+    try:
 	response = urlopen(request)
 	results = response.read()
 	
@@ -50,7 +51,8 @@ try:
             user[list[x]]=results[results.rfind(list[x])+len(list[x]):results.rfind(list[x+1])][3:-3]
             print user[list[x]]
         
-        print user
-except URLError, e:
-    print 'No response', e
+        return user
 
+    except URLError, e:
+        print 'No response', e
+        
