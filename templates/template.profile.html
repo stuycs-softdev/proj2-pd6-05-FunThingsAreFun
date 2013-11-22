@@ -10,14 +10,14 @@
                 <h2>GENERATE</h2>
             </div>
             <div class="profile" >
-                <img src="test_pic.jpg" />
+                <img src= {{ picture }} />
                 <!--color will be the dude's favorite color'-->
-                <div style="background-color: #d8d1d1 ">
-                    <h1 class="fittext1">Alen Mai</h1>
+                <div style="background-color: #d8d1d1; ">
+                    <h1 class="fittext1"> {{ name }}</h1>
                     <table class="fittext2">
-                        <tr><td>age</td><td>17</td></tr>
+                        <tr><td>age</td><td>{{ age }}</td></tr>
                         <tr><td>job</td><td>professional league of legends player here</td></tr>
-                        <tr><td>email</td><td>thealenmdfs@gmail.com</tr>
+                        <tr><td>email</td><td>{{ email }}</tr>
                         <tr><td>hobbies</td><td>Programming, writing, playing piano, other stuff...</td></tr>
                     </table>
                 </div>
