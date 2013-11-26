@@ -7,42 +7,18 @@
 
 body {
 	background: url('http://www.wallcoo.net/cartoon/Abstract_Blue_backgrounds_1920x1200/wallpapers/1600x1200/Abstract%20Blue%20backgrounds%2016.jpg');
-	font-family: Helvetica, Arial, "Lucida Grande", sans-serif;
+	font-family: Trebuchet MS
+/*	font-family: Helvetica, Arial, "Lucida Grande", sans-serif; */
 	font-weight: 300;
 	text-align: left;
 	height: 500px;
+
 }
 
 #wrapper {
 	width: 300px;
 	height: 400px;
 	margin: 70px auto;
-}
-
-/* Download Button (Demo Only) */
-.download {
-	display: block;
-	position: absolute;
-	float: right;
-	right: 25px;
-	bottom: 25px;
-	padding: 5px;
-	
-	font-weight: bold;
-	font-size: 11px;
-	text-align: right;
-	text-decoration: none;
-	color: rgba(0,0,0,0.5);
-	text-shadow: 1px 1px 0 rgba(256,256,256,0.5);
-}
-
-.download:hover {
-	color: rgba(0,0,0,0.75);
-	text-shadow: 1px 1px 0 rgba(256,256,256,0.5);
-}
-
-.download:focus {
-	bottom: 24px;
 }
 
 .gradient {
@@ -86,7 +62,8 @@ body {
 }
 
 .login-form .header h1 {
-	font-family: 'Bree Serif', serif;
+        font-family: Trebuchet MS;
+/*	font-family: 'Bree Serif', serif; */
 	font-weight: 300;
 	font-size: 28px;
 	line-height:34px;
@@ -110,7 +87,8 @@ body {
 	width: 188px;
 	padding: 15px 25px;
 	
-	font-family: Helvetica, Arial, "Lucida Grande", sans-serif;
+	font-family: Trebuchet MS;
+/*	font-family: Helvetica, Arial, "Lucida Grande", sans-serif; */
 	font-weight: 400;
 	font-size: 14px;
 	color: #9d9e9e;
@@ -198,7 +176,8 @@ body {
 	float: right;
 	padding: 11px 25px;
 	
-	font-family: 'Bree Serif', serif;
+	font-family: Trebuchet MS;
+/*	font-family: 'Bree Serif', serif; */
 	font-weight: 300;
 	font-size: 18px;
 	color: #fff;
@@ -245,7 +224,8 @@ body {
 	border: none;
 	cursor: pointer;
 	
-	font-family: 'Bree Serif', serif;
+	font-family: Trebuchet MS;
+/*	font-family: 'Bree Serif', serif; */
 	font-weight: 300;
 	font-size: 18px;
 	color: #414848;
