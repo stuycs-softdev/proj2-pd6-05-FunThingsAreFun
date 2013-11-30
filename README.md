@@ -30,7 +30,8 @@ FakeProfileGenerator
 
 ##APIs:
 * Random User API
-* About.me API
+* About.me API(planned on doing this, but did not)
+ * Screenscraped from www.TwitterBioGenerator.com
 * Personality Forge Chat Bot API
 
 ##Timeline:
