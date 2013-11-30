@@ -1,5 +1,6 @@
 from urllib2 import Request, urlopen, URLError
 
+
 #$.ajax({
 #  url: 'http://api.randomuser.me/0.2',
 #  dataType: 'json',
@@ -8,7 +9,7 @@ from urllib2 import Request, urlopen, URLError
 #  }
 #});
 
-def getUser():
+def getStuff():
     request = Request('http://api.randomuser.me/0.2')
     
     try:
@@ -49,10 +50,19 @@ def getUser():
         for x in range(0,len(list)-1):
             #print results[results.rfind(list[x])+len(list[x]):results.rfind(list[x+1])][3:-3]
             user[list[x]]=results[results.rfind(list[x])+len(list[x]):results.rfind(list[x+1])][3:-3]
-            print user[list[x]]
         
         return user
 
     except URLError, e:
         print 'No response', e
         
+def getBio():
+    response = urlopen('http://www.twitterbiogenerator.com')
+    html = response.read()
+    bio = html[1973:html.find('</textarea>')]
+    return bio
+
+def getUser():
+    x = getStuff()
+    x['bio'] = getBio()
+    return x
