@@ -50,6 +50,8 @@ div.profile > div
     margin:2.5% 0 0 2.5%;
     padding:1.5%;
     border-radius:10px;
+    border-width:0px 0px 4px 2px;
+    border-style:solid;
 }
 
 div.profile > div > h1, div.profile > div > h2
