@@ -6,15 +6,17 @@
     <script src="/static/js/gen.js"></script>
         </head>
         <body>
-            <div id="generate">
-                <h2>GENERATE</h2>
-            </div>
+	    <form method="POST">
+		<input type ="submit"  id="generate" value="GENERATE"/>
+	    </form>
+	    <ul>
 	    {% for x in db %}
+	    <li>
             <div class="profile">
                 <div>
                     <div class="container">
-                        <header>{{name}}</header>
-			<img class="propic" src="{{image}}" />
+                        <header>{{x.name}}</header>
+			<img class="propic" src="{{x.image}}" />
                     </div>
                 </div>
                 <div>
@@ -39,7 +41,7 @@
                             </tr>
                             <tr>
                                 <td>Seeking</td>
-                                <td>{{x.seeking}}</td>
+                                <td>{{x.ori}}</td>
                             </tr>
                             <tr>
                                 <td>
@@ -66,7 +68,9 @@
                     </div>
                 </div>
             </div>
+	    </li>
 	    {% endfor %}
+	</ul>
         </body>
 
 

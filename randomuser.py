@@ -16,8 +16,8 @@ def getStuff():
     try:
 	response = urlopen(request)
 	results = response.read()
-	data=json.loads(data)
-	data = data['results'][0]
+	data=json.loads(results)
+	data = data['results'][0]['user']
 
 	
         #results=results.lstrip('{"results":')

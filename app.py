@@ -11,10 +11,15 @@ app = Flask(__name__)
 app.secret_key = 'abcd'
 app.debug = True
 
-@app.route("/profile")
+@app.route("/profile", methods=['GET','POST'])
 def profile():
-    print(session.get('username'))
-    return render_template("template.profile.html",db=db.fakes.find({'username':session.get('username')}))
+    if request.method=="GET":
+	return render_template("template.profile.html",db=db.fakes.find({'user':session.get('username')}))
+    else:
+	print(session['username'] + "hello")
+	utils.addRandUser(session['username']);
+	return render_template("template.profile.html",db=db.fakes.find({'user':session['username']}))
+	
 			       
 @app.route('/')
 def index():
