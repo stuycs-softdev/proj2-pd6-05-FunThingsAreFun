@@ -1,7 +1,7 @@
 ﻿<html>
 <head>
     <title>Fake Profiles</title>
-    <link type="text/css" rel="stylesheet" href="/static/css/style.css" />
+    <link type="text/css" rel="stylesheet" href="../static/css/style.css" />
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <script src="jquery.fittext.js"></script>
         </head>
@@ -9,34 +9,24 @@
             <div id="generate">
                 <h2>GENERATE</h2>
             </div>
-            <div class="profile" >
-<<<<<<< HEAD:templates/template.profile.html
-                <img src= {{ photo }} />
-=======
-                <img src= {{ picture }} />
->>>>>>> c6b6ec0bf0280f934dc5c33d4cbfbd9e4cac1307:templates/template.profile.html
-                <!--color will be the dude's favorite color'-->
-                <div style="background-color: #d8d1d1; border-color:#c8c1c1 ">
-                    <h1 class="fittext1"> {{ name }}</h1>
-                    <table class="fittext2">
-                        <tr><td>age</td><td>{{ age }}</td></tr>
-                        <tr><td>job</td><td>professional league of legends player here</td></tr>
-                        <tr><td>email</td><td>{{ email }}</tr>
-                        <tr><td>hobbies</td><td>Programming, writing, playing piano, other stuff...</td></tr>
-                    </table>
+            <div class="profile">
+                <div>
+                    <div class="container">
+                        <header>{{name}}</header>
+                        <img class="propic" src="../static/img/test_pic.jpg" />
+                    </div>
                 </div>
-                <!--the guy chooses the second color too-->
-                <div class="aboutme" style="background-color: #FF6B6B; border-color:#ee5b5b">
-                    <h1 class="fittext4">About Me</h1>
-                    <p class="fittext3">HELLOOOO THIS IS THE ABOUT ME SECTION TEXT</p>
+                <div>
+                    <div class="container">
+                        <header>About</header>
+                    </div>
+                </div>
+                <div>
+                    <div class="container">
+                        <header>Activity</header>
+                    </div>
                 </div>
             </div>
-            <script type="text/javascript">
-                $(".fittext1").fitText();
-                $(".fittext2").fitText(2.5);
-                $(".fittext3").fitText(3);
-                $(".fittext4").fitText(2);
-            </script>
         </body>
 
 
