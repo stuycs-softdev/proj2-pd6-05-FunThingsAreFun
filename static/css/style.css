@@ -2,7 +2,7 @@
 {
     padding: 0px;
     margin: 0px;
-    background-color:lightgrey;
+    background-color:#dadada;
     font-family:Trebuchet MS;
 }
 
@@ -47,6 +47,7 @@ div.profile > div
 div.profile > div > div.container {
     border:1px solid black;
     height:auto;
+    background-color:#e9e9e9;
 }
 
 div.profile > div > div.container > header {
@@ -55,11 +56,18 @@ div.profile > div > div.container > header {
     font-size:1.1em;
     text-indent:10px;
     width:100%;
+    background-color:#c0c0c0;
     outline:1px solid black;
 }
 
+div.container > table {
+    padding:5px;
+    border-spacing:5px;
+}
 
-
+div.container > table > tbody > tr > td:nth-child(1) {
+    width:75px;
+}
 div.profile > div > h1, div.profile > div > h2
 {
     margin:0;
