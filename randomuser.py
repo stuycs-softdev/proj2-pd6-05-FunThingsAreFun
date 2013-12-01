@@ -1,4 +1,5 @@
 from urllib2 import Request, urlopen, URLError
+import json
 
 
 #$.ajax({
@@ -15,6 +16,8 @@ def getStuff():
     try:
 	response = urlopen(request)
 	results = response.read()
+	data=json.reads(data)
+
 	
         #results=results.lstrip('{"results":')
         #results=results.rstrip("}")

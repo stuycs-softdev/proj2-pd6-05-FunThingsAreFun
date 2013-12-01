@@ -1,5 +1,6 @@
 from pymongo import MongoClient
 from flask import session
+import randomuser
 
 client = MongoClient()
 db = client.ARSS
@@ -58,3 +59,14 @@ def logged_in():
         if not user_exists(session.get('username', None)):
                 session.pop('username', None)
         return session.get('username', None) != None
+
+def addRandUser(username):
+    user=randomuser.getUser()
+    name = user['name']['first'].capitalize() + " " + user['name']['last'].capitalize()
+    location = (user['location']['city'] + ", " + user['location']['state']).title()
+    about = user['bio']
+    email = user['email']
+    cell = user['cell']
+    image=user['picture']
+    ori = 'Men'
+    db.fakes.insert({"name":name,"location":location,"about":about,"email":email,"cell":cell,"image":image,"ori":ori,'user':username});
