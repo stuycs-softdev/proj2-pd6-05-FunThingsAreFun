@@ -16,7 +16,8 @@ def getStuff():
     try:
 	response = urlopen(request)
 	results = response.read()
-	data=json.reads(data)
+	data=json.loads(data)
+	data = data['results'][0]
 
 	
         #results=results.lstrip('{"results":')
@@ -50,11 +51,11 @@ def getStuff():
         #gender=gender[3:-3]
         #print gender
         
-        for x in range(0,len(list)-1):
+#        for x in range(0,len(list)-1):
             #print results[results.rfind(list[x])+len(list[x]):results.rfind(list[x+1])][3:-3]
-            user[list[x]]=results[results.rfind(list[x])+len(list[x]):results.rfind(list[x+1])][3:-3]
+#            user[list[x]]=results[results.rfind(list[x])+len(list[x]):results.rfind(list[x+1])][3:-3]
         
-        return user
+        return data
 
     except URLError, e:
         print 'No response', e
