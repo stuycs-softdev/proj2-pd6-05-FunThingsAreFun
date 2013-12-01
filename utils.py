@@ -39,10 +39,9 @@ def logout_user():
 def register_user(username, password):
         if (user_exists(username)):
                 return 'User Already Exists.'
-        elif (len(password) < 4):
-                return 'Password too short.'
         else:
                 insert_user(username, password)
+		login_user(username,password)
                 return 'Success!'
 
 def change_password(username, password):

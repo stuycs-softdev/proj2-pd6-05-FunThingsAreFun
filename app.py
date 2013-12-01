@@ -7,34 +7,38 @@ app = Flask(__name__)
 app.secret_key = 'abcd'
 app.debug = True
 
-@app.route("/")
-def index():
-	return render_template("index.html")
-
 @app.route("/profile")
 def profile():
 	#user=getUser()
 	#return render_template("template.profile.html",picture=user["picture"],name=user["name"],age=user["age"],email=user["email"])
-	return render_template("template.profile.html")
+    return render_template("template.profile.html")
 			       
 			       
 @app.route('/')
 def index():
-        return render_template('index.html')
+    if 'username' in session:
+	print 'loggedi n'
+	return redirect("/profile")
+    else:
+	return redirect("/login")
 
-@app.route('/login', methods = ['POST'])
+@app.route('/login', methods = ['GET','POST'])
 def login():
-        username = get_form_value('username')
-        password = get_form_value('password')
-        flash(utils.login_user(username, password))
-        return redirect(url_for('index'))
-
-@app.route('/login', methods = ['POST'])
-def register():
-        username = get_form_value('username')
-        password = get_form_value('password')
-        flash(utils.register_user(username, password))
-        return redirect(url_for('index'))
+    if request.method=="GET":
+	return render_template("login.html")
+    else:
+	button=request.form['submit']
+	print button
+	if button=='Login':
+            username = request.form['username']
+	    password = request.form['password']
+	    flash(utils.login_user(username, password))
+	    return redirect("/")
+	else:
+	    username = request.form['username']
+	    password = request.form['password']
+	    print utils.register_user(username, password)
+	    return redirect("/")
 
 @app.route('/logout', methods = ['POST'])
 def logout():
