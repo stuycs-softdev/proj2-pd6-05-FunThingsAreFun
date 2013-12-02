@@ -21,8 +21,6 @@ FakeProfileGenerator
 2. Name, Age, Hobbies, details, etc
 3. Tag option
 
-##Personality Forge Chat Bot
-
 ##Website
 1. User and Admin database
 2. Profiles database
@@ -30,8 +28,6 @@ FakeProfileGenerator
 
 ##APIs:
 * Random User API
-* About.me API(planned on doing this, but did not)
- * Screenscraped from www.TwitterBioGenerator.com
+* About.me API
+* Screenscraped from www.TwitterBioGenerator.com
 * Personality Forge Chat Bot API
-
-##Timeline:
