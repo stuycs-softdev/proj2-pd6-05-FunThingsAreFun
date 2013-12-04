@@ -23,10 +23,11 @@ def profile():
 			       
 @app.route('/')
 def index():
-    if 'username' in session:
-	return redirect("/profile")
-    else:
-	return redirect("/login")
+    if request.method == "GET":
+        if 'username' in session:
+            return redirect("/profile")
+        else:
+            return render_template("index.html")
 
 @app.route('/login', methods = ['GET','POST'])
 def login():
