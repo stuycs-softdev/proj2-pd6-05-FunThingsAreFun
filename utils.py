@@ -67,6 +67,7 @@ def addRandUser(username):
     about = user['bio']
     email = user['email']
     cell = user['cell']
-    image=user['picture']
-    ori = 'Men'
-    db.fakes.insert({"name":name,"location":location,"about":about,"email":email,"cell":cell,"image":image,"ori":ori,'user':username});
+    image = user['picture']
+    ori = user['ori']
+    hobbies = user['hobbies']
+    db.fakes.insert({"name":name,"location":location,"about":about,"email":email,"cell":cell,"image":image,"ori":ori,'user':username, 'hobbies':hobbies});
