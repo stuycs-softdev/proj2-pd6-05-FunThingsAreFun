@@ -1,0 +1,112 @@
+﻿body
+{
+    padding: 0px;
+    margin: 0px;
+    background-color:#dadada;
+    font-family:Trebuchet MS;
+}
+
+#generate
+{
+    display:block;
+    margin:0 auto;
+    border-radius:5px;
+    height:50px;
+    width:200px;
+    background-color:#2ECC71;
+    border:0px;
+    border-bottom:4px solid #27AE60;
+    border-left:2px solid #27AE60;
+    text-align:center;
+    color:white;
+    line-height:50px;
+    cursor:pointer;
+    font-size:1.5em;
+    margin-top:25px;
+}
+
+#generate:active{
+    border:0px;
+}
+
+ul {
+    list-style-type: none;
+    padding:0px;
+    margin:0px;
+}
+
+ul > li {
+    display:block;
+}
+
+
+div.profile
+{
+    margin:0px auto;
+    margin-top:20px;
+    width:90%;
+    min-width:900px;
+    max-width:1100px;
+    height:auto;
+    min-height:450px;
+    margin-bottom:50px;
+    border-bottom:1px solid white;
+}
+
+img.propic {
+    width:100%;
+}
+
+div.profile > div
+{
+    float:left;
+    width:30.3%;
+    height:auto;
+    padding:0 1.5% 0 1.5%;
+}
+
+div.profile > div > div.container {
+    border:1px solid black;
+    height:auto;
+    background-color:#e9e9e9;
+}
+
+div.profile > div > div.container > header {
+    height:30px;
+    line-height:30px;
+    font-size:1.1em;
+    text-indent:10px;
+    width:100%;
+    background-color:#c0c0c0;
+    outline:1px solid black;
+}
+
+div.container > table {
+    padding:5px;
+    border-spacing:5px;
+}
+
+div.container > table > tbody > tr > td:nth-child(1) {
+    width:75px;
+}
+div.profile > div > h1, div.profile > div > h2
+{
+    margin:0;
+}
+
+div.profile > div > table
+{
+    width:100%;
+}
+
+td
+{
+    padding-right:2%;
+}
+
+div.profile > div.aboutme
+{
+    width:92%;
+    height:auto;
+    margin-bottom:2.5%;
+}
