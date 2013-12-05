@@ -3,6 +3,7 @@
     <title>Fake Profiles</title>
     <link type="text/css" rel="stylesheet" href="../static/css/style.css" />
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script src="/static/js/pico/client.js"></script>
     <script src="/static/js/gen.js"></script>
         </head>
         <body>
@@ -47,8 +48,8 @@
                                 <td>
                                     Hobbies
                                 </td>
-                                <td>
-                                    {{x.hobbies}}
+				<td>
+				    {{x.hobbies[0].hobby}}, {{x.hobbies[1].hobby}}, {{x.hobbies[2].hobby}}
                                 </td>
                             </tr>
                             <tr>
