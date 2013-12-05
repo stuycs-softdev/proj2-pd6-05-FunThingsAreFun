@@ -8,6 +8,7 @@
         </head>
         <body>
             <div class="profile">
+		<h1>{{x.name}}</h1>
                 <div>
                     <div class="container">
                         <header>{{x.name}}</header>
@@ -72,8 +73,16 @@
 			    </li>
 			    {% endfor %}
 			</ul>
-		    </div>
+			</div>
                     </div>
+		    <div class="container">
+			<header>Connections</header>
+			<div class="activity">
+			    {% for p in i %}
+			    <img src='{{p}}'/>
+			    {% endfor %}
+			</div>
+		    </div>
                 </div>
             </div>
 	    <form method="POST" action="/logout">

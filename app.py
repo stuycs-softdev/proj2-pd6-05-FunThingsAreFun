@@ -37,7 +37,13 @@ def index():
 
 @app.route('/page/<id>')
 def page(id):
-    return render_template("template.pro.html",x=utils.getPro(id)[0])
+    print utils.getPro(id)[0]
+    pro = utils.getPro(id)[0]
+    imgs = []
+    for x in pro['connections']:
+	imgs.append(db.fakes.find({'_id':x})[0]['image'])
+
+    return render_template("template.pro.html",x=utils.getPro(id)[0], i=imgs)
 
 @app.route('/login', methods = ['GET','POST'])
 def login():
