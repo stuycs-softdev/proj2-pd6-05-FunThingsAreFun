@@ -2,6 +2,7 @@ from pymongo import MongoClient
 from flask import session
 import randomuser
 import random
+import datetime
 
 client = MongoClient()
 db = client.ARSS
@@ -61,6 +62,7 @@ def logged_in():
         return session.get('username', None) != None
 
 def addRandUser(username):
+    time = str(datetime.datetime.today()).split('.',1)[0]
     user=randomuser.getUser()
     name = user['name']['first'].capitalize() + " " + user['name']['last'].capitalize()
     location = (user['location']['city'] + ", " + user['location']['state']).title()
@@ -70,19 +72,21 @@ def addRandUser(username):
     image = user['picture']
     ori = user['ori']
     hobbies = user['hobbies']
-    stuff = {"name":name,"location":location,"about":about,"email":email,"cell":cell,"image":image,"ori":ori,'user':username, 'hobbies':hobbies, 'activity':[[0, name + ' has joined AI Dating Site!']], 'connections':[]}
+    gender = user['gender']
+    stuff = {"name":name,"location":location,"about":about,"email":email,"cell":cell,"image":image,"ori":ori,'user':username, 'gender': gender, 'hobbies':hobbies, 'activity':[[0, name + ' has joined AI Dating Site!', time]], 'connections':[]}
     print 'b4 sert'
     db.fakes.insert(stuff)
     del stuff['_id']
     return stuff
 
 def connect(a,b):
-    a['activity'].append([1, a['name'] + ' has connected with ', b['name'], b['_id']])
+    time = str(datetime.datetime.today()).split('.',1)[0]
+    a['activity'].append([1, a['name'] + ' has connected with ', b['name'], b['_id'], time])
     a['connections'].append(a['_id'])
     print a['activity']
     db.fakes.update({'_id':a['_id']},{'$set': {'activity': a['activity']}})
     db.fakes.update({'_id':a['_id']},{'$set': {'connections':a['connections']}})
-    b['activity'].append([1, b['name'] + ' has connected with ', a['name'], a['_id']])
+    b['activity'].append([1, b['name'] + ' has connected with ', a['name'], a['_id'], time])
     ba = b['activity']
     b['connections'].append(a['_id'])
     bc = b['connections']
@@ -96,7 +100,7 @@ def doStuff():
     ppl = [x for x in db.fakes.find()]
     for p in ppl:
 	for x in ppl:
-	    if p != x and x['_id'] not in p['connections']:
+	    if p != x and x['_id'] not in p['connections'] and ((p['ori'] == Men and x['gender'] == 'male') or (p['ori']==Women and x['gender'] == 'female')):
 		pOI = 0
 		xOI = 0
 		for ph in p['hobbies']:
@@ -112,5 +116,7 @@ def doStuff():
 
 		if chance == 0:
 		    connect(p,x)
+		    break
 		elif random.randint(0,chance) != 0:
 		    connect(p,x)
+		    break

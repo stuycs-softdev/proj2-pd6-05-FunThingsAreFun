@@ -159,6 +159,11 @@ div.container > table {
 div.container > table > tbody > tr > td:nth-child(1) {
     width:75px;
 }
+
+div.activity {
+    padding:10px;
+}
+
 div.profile > div > h1, div.profile > div > h2
 {
     margin:0;

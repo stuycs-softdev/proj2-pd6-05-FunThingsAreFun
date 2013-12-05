@@ -65,19 +65,21 @@
                     </div>
                 </div>
                 <div>
-                    <div class="container">
+                    <div class="container ">
                         <header>Activity</header>
+			<div class="activity">
 			<ul>
 			    {% for y in x.activity %}
 			    <li>
 				{% if y[0] %}
-				    {{y[1]}} <a href="{{y[3]}}">{{y[2]}}</a>!
+				<b>{{y[4]}}</b>: {{y[1]}} <a href="{{y[3]}}">{{y[2]}}</a>!
 				{% else %}
-				    {{y[1]}}
+				<b> {{y[2]}}</b>: {{y[1]}}
 				{% endif %}
 			    </li>
 			    {% endfor %}
 			</ul>
+		    </div>
                     </div>
                 </div>
             </div>
