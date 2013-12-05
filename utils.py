@@ -1,6 +1,7 @@
 from pymongo import MongoClient
 from flask import session
 import randomuser
+import random
 
 client = MongoClient()
 db = client.ARSS
@@ -70,8 +71,29 @@ def addRandUser(username):
     image = user['picture']
     ori = user['ori']
     hobbies = user['hobbies']
-    stuff = {"name":name,"location":location,"about":about,"email":email,"cell":cell,"image":image,"ori":ori,'user':username, 'hobbies':hobbies}
+    stuff = {"name":name,"location":location,"about":about,"email":email,"cell":cell,"image":image,"ori":ori,'user':username, 'hobbies':hobbies, 'activity':[[0, name + ' has joined AI Dating Site!']], 'connections':[]}
     print 'b4 sert'
-    db.fakes.insert(stuff);
+    db.fakes.insert(stuff)
     del stuff['_id']
     return stuff
+
+def connect(a,b):
+    db.update({'_id':a['_id']},{'activity': a['activity'].append([1, a['name'] + ' has connected with ', b['name'], b['_id']]), 'connections':b['connections'].append(b['_id'])})
+    db.update({'_id':b['_id']},{'activity': b['activity'].apeend([1, b['name'] + ' has connected with ', a['name'], a['_id']]), 'connections':a['connections'].append(a['_id'])})
+
+def doStuff():
+    ppl = [x for x in db.fakes.find()]
+    for p in ppl:
+	for x in ppl:
+	    if p != x and x['_id'] not in p['connections']:
+		chance = 4
+		for ph in p:
+		    for xh in x:
+			if ph['door'] == xh['door']:
+			    chance = chance - 1
+		if chance == 4:
+		    break
+		elif chance == 0:
+		    connect(p,x)
+		elif random.randint(0,chance) != 0:
+		    connect(p,x)
