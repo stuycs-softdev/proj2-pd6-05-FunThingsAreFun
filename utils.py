@@ -96,11 +96,14 @@ def connect(a,b):
 def showA():
     return [x['activity'] for x in db.fakes.find()]
 
+def getPro(_id):
+    return [x for x in db.fakes.find({'_id':ObjectId(_id)})]
+
 def doStuff():
     ppl = [x for x in db.fakes.find()]
     for p in ppl:
 	for x in ppl:
-	    if p != x and x['_id'] not in p['connections'] and ((p['ori'] == Men and x['gender'] == 'male') or (p['ori']==Women and x['gender'] == 'female')):
+	    if p != x and x['_id'] not in p['connections'] and ((p['ori'] == 'Men' and x['gender'] == 'male') or (p['ori']=='Women' and x['gender'] == 'female')):
 		pOI = 0
 		xOI = 0
 		for ph in p['hobbies']:

@@ -1,0 +1,84 @@
+<html>
+<head>
+    <title>Fake Profiles</title>
+    <link type="text/css" rel="stylesheet" href="../static/css/style.css" />
+    <link rel="shortcut icon" href="../static/roboheart.jpg"/>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script src="/static/js/gen.js"></script>
+        </head>
+        <body>
+            <div class="profile">
+                <div>
+                    <div class="container">
+                        <header>{{x.name}}</header>
+			<img class="propic" src="{{x.image}}" />
+                    </div>
+                </div>
+                <div>
+                    <div class="container">
+                        <header>About</header>
+                        <table>
+                            <tr>
+                                <td>Name</td>
+				<td>{{x.name}}</td>
+                            </tr>
+                            <tr>    
+                                <td>Location</td>
+                                <td>{{x.location}}</td>
+                            </tr>
+                            <tr>
+                                <td>Email</td>
+                                <td>{{x.email}}</td>
+                            </tr>
+                            <tr>
+                                <td>Call me</td>
+                                <td>{{x.cell}}</td>
+                            </tr>
+                            <tr>
+                                <td>Seeking</td>
+                                <td>{{x.ori}}</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Hobbies
+                                </td>
+				<td>
+				    {{x.hobbies[0].hobby}}, {{x.hobbies[1].hobby}}, {{x.hobbies[2].hobby}}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    About me
+                                </td>
+                                <td>
+                                    {{x.about}}
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div>
+                    <div class="container ">
+                        <header>Activity</header>
+			<div class="activity">
+			<ul>
+			    {% for y in x.activity %}
+			    <li>
+				{% if y[0] %}
+				<b>{{y[4]}}</b>: {{y[1]}} <a href="{{y[3]}}">{{y[2]}}</a>!
+				{% else %}
+				<b> {{y[2]}}</b>: {{y[1]}}
+				{% endif %}
+			    </li>
+			    {% endfor %}
+			</ul>
+		    </div>
+                    </div>
+                </div>
+            </div>
+	    <form method="POST" action="/logout">
+		<input type ="submit"  id="logout" value="LOGOUT"/>
+	    </form>
+        </body>
+
+</html>

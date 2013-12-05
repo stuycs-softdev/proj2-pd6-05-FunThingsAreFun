@@ -35,6 +35,10 @@ def index():
     else:
         return render_template("index.html")
 
+@app.route('/page/<id>')
+def page(id):
+    return render_template("template.pro.html",x=utils.getPro(id))
+
 @app.route('/login', methods = ['GET','POST'])
 def login():
     if request.method=="GET":
