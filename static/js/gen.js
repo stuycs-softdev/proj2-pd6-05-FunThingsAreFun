@@ -41,7 +41,7 @@ $(document).ready(function() {
                         '<header>Activity</header>' + 
 			'<ul>' + 
 			    '<li>' + 
-				'<b>' + x.activity[2] + '</b>' + ': ' + x.activity[1] +
+				'<b>' + x.activity[0][2] + '</b>' + ': ' + x.activity[0][1] +
 			    '</li>' + 	
                     '</div>' + 
                 '</div>' + 
