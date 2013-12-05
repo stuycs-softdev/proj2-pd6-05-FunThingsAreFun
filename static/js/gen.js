@@ -48,7 +48,7 @@ $(document).ready(function() {
             '</div>' + 
 	    '</li>'
 	    $('.circle').slideUp('slow');
-	    $('ul').prepend(html);
+	    $('#prolist').prepend(html);
 	}
 
 	$('#generate').click(function() {
