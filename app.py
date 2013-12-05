@@ -37,7 +37,7 @@ def index():
 
 @app.route('/page/<id>')
 def page(id):
-    return render_template("template.pro.html",x=utils.getPro(id))
+    return render_template("template.pro.html",x=utils.getPro(id)[0])
 
 @app.route('/login', methods = ['GET','POST'])
 def login():
