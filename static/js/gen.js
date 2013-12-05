@@ -39,6 +39,10 @@ $(document).ready(function() {
                 '<div>' + 
                     '<div class="container">' + 
                         '<header>Activity</header>' + 
+			'<ul>' + 
+			    '<li>' + 
+				'<b>' + x.activity[2] + '</b>' + ': ' + x.activity[1] +
+			    '</li>' + 	
                     '</div>' + 
                 '</div>' + 
             '</div>' + 
