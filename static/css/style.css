@@ -29,6 +29,53 @@
     border:0px;
 }
 
+.circle  {
+    background-color: rgba(0,0,0,0);
+    border: 5px solid #2ECC71;
+    opacity: .9;
+    border-top: 5px solid rgba(0,0,0,0);
+    border-left: 5px solid rgba(0,0,0,0);
+    border-radius: 50px;
+    box-shadow: 0 0 35px #3EDC81;
+    width: 50px;
+    height: 50px;
+    margin: 0 auto;
+    margin-top:25px;
+    -moz-animation: spin 1s infinite linear;
+    -webkit-animation: spin 1s infinite linear;
+}
+
+.noHeight {
+    height:0px;
+}
+
+.noBord {
+    border:0px;
+}
+
+.noShow {
+    display:none;
+}
+
+.circle1 {
+    background-color: rgba(0,0,0,0);
+    border: 5px solid rgba(0,183,229,0.9);
+    opacity: .9;
+    border-top: 5px solid rgba(0,0,0,0);
+    border-left: 5px solid rgba(0,0,0,0);
+    border-radius: 50px;
+    box-shadow: 0 0 15px #2187e7;
+    width: 30px;
+    height: 30px;
+    margin: 0 auto;
+    position: relative;
+    top: -50px;
+    -moz-animation: spinoff .5s infinite linear;
+    -webkit-animation: spinoff .5s infinite linear;
+}
+
+
+
 #logout
 {
     display:block;
@@ -70,15 +117,15 @@ div.profile
     width:90%;
     min-width:1100px;
     max-width:1400px;
-    height:auto;
+    height:aut;o;
     min-height:450px;
     margin-bottom:50px;
     border-bottom:1px solid white;
+    transition:0.5s all;
 }
 
 img.propic {
-    width:100%;
-}
+    width:100%; }
 
 div.profile > div
 {
@@ -132,4 +179,45 @@ div.profile > div.aboutme
     width:92%;
     height:auto;
     margin-bottom:2.5%;
+}
+
+
+@-moz-keyframes spin {
+    0% {
+        -moz-transform: rotate(0deg);
+    }
+
+    100% {
+        -moz-transform: rotate(360deg);
+    };
+}
+
+@-moz-keyframes spinoff {
+    0% {
+        -moz-transform: rotate(0deg);
+    }
+
+    100% {
+        -moz-transform: rotate(-360deg);
+    };
+}
+
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+    };
+}
+
+@-webkit-keyframes spinoff {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(-360deg);
+    };
 }

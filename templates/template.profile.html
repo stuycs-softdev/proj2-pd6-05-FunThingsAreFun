@@ -3,13 +3,14 @@
     <title>Fake Profiles</title>
     <link type="text/css" rel="stylesheet" href="../static/css/style.css" />
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-    <script src="/static/js/pico/client.js"></script>
     <script src="/static/js/gen.js"></script>
         </head>
         <body>
-	    <form method="POST">
-		<input type ="submit"  id="generate" value="GENERATE"/>
-	    </form>
+		<div id="generate" />
+		    GENERATE
+		</div>
+		<div class='circle '>
+		</div>
 	    <ul>
 	    {% for x in db %}
 	    <li>

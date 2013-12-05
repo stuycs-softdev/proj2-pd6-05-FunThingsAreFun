@@ -1,7 +1,7 @@
 #!/usr/bin/python
 
-from flask import Flask, request, render_template, redirect, session, url_for, flash
-import utils, json
+from flask import Flask, request, render_template, redirect, session, url_for, flash, json
+import utils 
 import randomuser 
 from pymongo import MongoClient
 
@@ -14,13 +14,20 @@ app.debug = True
 @app.route("/profile", methods=['GET','POST'])
 def profile():
     if request.method=="GET":
-	return render_template("template.profile.html",db=db.fakes.find({'user':session.get('username')}))
+	return render_template("template.profile.html",db=db.fakes.find({'user':session.get('username')}).sort('$natural',-1))
     else:
 	print(session['username'] + "hello")
 	utils.addRandUser(session['username']);
-	return render_template("template.profile.html",db=db.fakes.find({'user':session['username']}))
+	x=db.fakes.find({'user':session['username']}).sort('$natural',-1)
+	print db
+	return render_template("template.profile.html",db=db)
 	
-			       
+@app.route("/gen", methods=['POST'])
+def gen():
+    user = utils.addRandUser(session['username']);
+    from flask import jsonify
+    return jsonify(**user)
+
 @app.route('/')
 def index():
     if 'username' in session:
