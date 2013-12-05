@@ -33,8 +33,7 @@ def login_user(username, password):
                 session['username'] = username
                 return 'Success!'
         else:
-                return 'Incorrect username or password.'
-
+                return 'Incorrect username or password.' 
 def logout_user():
         session.pop('username', None)
 
@@ -78,22 +77,40 @@ def addRandUser(username):
     return stuff
 
 def connect(a,b):
-    db.update({'_id':a['_id']},{'activity': a['activity'].append([1, a['name'] + ' has connected with ', b['name'], b['_id']]), 'connections':b['connections'].append(b['_id'])})
-    db.update({'_id':b['_id']},{'activity': b['activity'].apeend([1, b['name'] + ' has connected with ', a['name'], a['_id']]), 'connections':a['connections'].append(a['_id'])})
+    a['activity'].append([1, a['name'] + ' has connected with ', b['name'], b['_id']])
+    a['connections'].append(a['_id'])
+    print a['activity']
+    db.fakes.update({'_id':a['_id']},{'$set': {'activity': a['activity']}})
+    db.fakes.update({'_id':a['_id']},{'$set': {'connections':a['connections']}})
+    b['activity'].append([1, b['name'] + ' has connected with ', a['name'], a['_id']])
+    ba = b['activity']
+    b['connections'].append(a['_id'])
+    bc = b['connections']
+    db.fakes.update({'_id':b['_id']},{'$set': {'activity': b['activity']}})
+    db.fakes.update({'_id':b['_id']},{'$set': {'connections':b['connections']}})
+
+def showA():
+    return [x['activity'] for x in db.fakes.find()]
 
 def doStuff():
     ppl = [x for x in db.fakes.find()]
     for p in ppl:
 	for x in ppl:
 	    if p != x and x['_id'] not in p['connections']:
-		chance = 4
-		for ph in p:
-		    for xh in x:
-			if ph['door'] == xh['door']:
-			    chance = chance - 1
-		if chance == 4:
-		    break
-		elif chance == 0:
+		pOI = 0
+		xOI = 0
+		for ph in p['hobbies']:
+		    if ph['door'] == 'out':
+			pOI = pOI + 1
+		for xh in x['hobbies']:
+		    if xh['door'] == 'out':
+			xOI = xOI + 1
+
+		chance = pOI - xOI
+		chance = 0
+		print chance
+
+		if chance == 0:
 		    connect(p,x)
 		elif random.randint(0,chance) != 0:
 		    connect(p,x)
