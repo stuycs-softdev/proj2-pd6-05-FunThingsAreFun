@@ -1,3 +1,3 @@
-import utils.py
+import utils
 
 utils.doStuff()
