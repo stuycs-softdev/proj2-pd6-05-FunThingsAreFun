@@ -41,7 +41,7 @@ def page(id):
     pro = utils.getPro(id)[0]
     imgs = []
     for x in pro['connections']:
-	imgs.append(db.fakes.find({'_id':x})[0]['image'])
+	imgs.append([db.fakes.find({'_id':x})[0]['image'], x])
 
     return render_template("template.pro.html",x=utils.getPro(id)[0], i=imgs)
 

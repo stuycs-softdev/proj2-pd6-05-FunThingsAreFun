@@ -127,7 +127,8 @@ div.profile
 }
 
 img.propic {
-    width:100%; }
+    width:100%; 
+}
 
 div.profile > div
 {
@@ -135,6 +136,11 @@ div.profile > div
     width:30.3%;
     height:auto;
     padding:0 1.5% 0 1.5%;
+}
+
+div.profile > div.activity 
+{
+    max-height:400px;
 }
 
 div.profile > div > div.container {

@@ -58,8 +58,8 @@
                         </table>
                     </div>
                 </div>
-                <div>
-                    <div class="container ">
+                <div class="activity">
+                    <div class="container">
                         <header>Activity</header>
 			<div class="activity">
 			<ul>
@@ -79,7 +79,7 @@
 			<header>Connections</header>
 			<div class="activity">
 			    {% for p in i %}
-			    <img src='{{p}}'/>
+			    <a href="/page/{{p[1]}}"><img src='{{p[0]}}'/></a>
 			    {% endfor %}
 			</div>
 		    </div>
