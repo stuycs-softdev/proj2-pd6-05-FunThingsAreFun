@@ -138,9 +138,11 @@ div.profile > div
     padding:0 1.5% 0 1.5%;
 }
 
-div.profile > div.activity 
+div.activity 
 {
     max-height:400px;
+    overflow-y:scroll;
+    overflow-x: auto;
 }
 
 div.profile > div > div.container {
